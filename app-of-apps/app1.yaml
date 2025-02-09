@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      securityContext:
+      seccompProfile:
+        type: RuntimeDefault
+      allowPrivilegeEscalation: false
+      capabilities:
+        add:
+          - NET_ADMIN
+          - NET_RAW
+        drop:
+          - All
+      fsGroup: 65534
+      runAsUser: 65534
+      runAsNonRoot: true
+      containers:
+        - name: app1
+          image: us-central1-docker.pkg.dev/sharky-enterprises-450214/app1
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 250m
+              memory: 1Gi
+            requests:
+              cpu: 10m
+    memory: 512Mi
+          port:
+            number: 80
