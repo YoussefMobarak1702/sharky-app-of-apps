@@ -26,12 +26,3 @@ spec:
         - name: app1
           image: us-central1-docker.pkg.dev/sharky-enterprises-450214/app1
           imagePullPolicy: Always
-          resources:
-            limits:
-              cpu: 250m
-              memory: 1Gi
-            requests:
-              cpu: 10m
-    memory: 512Mi
-          port:
-            number: 80
