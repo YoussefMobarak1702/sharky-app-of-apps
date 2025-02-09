@@ -27,7 +27,7 @@ spec:
       runAsNonRoot: true
       containers:
         - name: app1
-          image: us-central1-docker.pkg.dev/sharky-enterprises-450214/app1/app1
+          image: youssefmobarak/sharky-app1:latest
       imagePullSecrets:
         - name: my-secret
           resources:
