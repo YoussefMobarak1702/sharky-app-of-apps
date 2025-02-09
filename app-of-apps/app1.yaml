@@ -13,14 +13,6 @@ spec:
         app: app1
     spec:
       securityContext:
-      seccompProfile:
-        type: RuntimeDefault
-      capabilities:
-        add:
-          - NET_ADMIN
-        drop:
-          - All
-      runAsUser: 65534
       runAsNonRoot: true
       containers:
         - name: app1
