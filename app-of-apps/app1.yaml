@@ -26,3 +26,5 @@ spec:
         - name: app1
           image: us-central1-docker.pkg.dev/sharky-enterprises-450214/app1/app1
           imagePullPolicy: Always
+        imagePullSecrets:
+          - name: my-secret
