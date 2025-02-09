@@ -1,3 +1,13 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/git-branch: main
+    argocd-image-updater.argoproj.io/image-list: myalias=us-central1-docker.pkg.dev/sharky-enterprises-450214/app1
+    argocd-image-updater.argoproj.io/myalias.pull-secret: pullsecret:argocd/artifact-registry
+    argocd-image-updater.argoproj.io/myalias.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,5 +24,5 @@ spec:
     spec:
       containers:
         - name: app1
-          image: us-central1-docker.pkg.dev/sharky-enterprises-450214/app1/app1@sha256:f96c2fccf58661ce3d8ebb000f1c0b9de34d527b3fc480552cb00d86263d010d
+          image: us-central1-docker.pkg.dev/sharky-enterprises-450214/app1/app1
           imagePullPolicy: Always
