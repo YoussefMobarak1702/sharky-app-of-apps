@@ -21,7 +21,6 @@ spec:
           - NET_ADMIN
         drop:
           - All
-      fsGroup: 65534
       runAsUser: 65534
       runAsNonRoot: true
       containers:
