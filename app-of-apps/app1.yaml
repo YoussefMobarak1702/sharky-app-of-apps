@@ -15,7 +15,6 @@ spec:
       securityContext:
       seccompProfile:
         type: RuntimeDefault
-      allowPrivilegeEscalation: false
       capabilities:
         add:
           - NET_ADMIN
