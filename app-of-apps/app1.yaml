@@ -19,7 +19,6 @@ spec:
       capabilities:
         add:
           - NET_ADMIN
-          - NET_RAW
         drop:
           - All
       fsGroup: 65534
@@ -28,8 +27,7 @@ spec:
       containers:
         - name: app1
           image: youssefmobarak/sharky-app1:latest
-      imagePullSecrets:
-        - name: my-secret
+          imagePullPolicy: Always
           resources:
             limits:
               cpu: 250m
