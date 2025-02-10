@@ -27,9 +27,8 @@ spec:
       runAsNonRoot: true
       containers:
         - name: app1
-          image: us-central1-docker.pkg.dev/sharky-enterprises-450214/app1/app1:latest
-      imagePullSecrets:
-        - name: my-secret
+          image: youssefmobarak/sharky-app1:latest
+ 
           resources:
             limits:
               cpu: 250m
