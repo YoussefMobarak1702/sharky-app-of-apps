@@ -17,5 +17,5 @@ spec:
           service:
             name: app1-service
             port:
-              number: 80
-            targetPort: 3001
+              number: 90
+            
