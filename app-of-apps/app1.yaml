@@ -13,22 +13,21 @@ spec:
         app: app1
     spec:
       securityContext:
-      seccompProfile:
-        type: RuntimeDefault
-      allowPrivilegeEscalation: false
-      capabilities:
-        add:
-          - NET_ADMIN
-          - NET_RAW
-        drop:
-          - All
-      fsGroup: 65534
-      runAsUser: 65534
-      runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+            - NET_ADMIN
+            - NET_RAW
+          drop:
+            - All
+        fsGroup: 65534
+        runAsUser: 65534
+        runAsNonRoot: true
       containers:
         - name: app1
           image: youssefmobarak/sharky-app1:latest
- 
           resources:
             limits:
               cpu: 250m
